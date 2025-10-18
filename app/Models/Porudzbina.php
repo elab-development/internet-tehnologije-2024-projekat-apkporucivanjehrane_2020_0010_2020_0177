@@ -30,6 +30,8 @@ class Porudzbina extends Model
         'total_price',
         'status',
         'delivery_address',
+        'contact_email',
+        'contact_phone',
         'note',
     ];
 

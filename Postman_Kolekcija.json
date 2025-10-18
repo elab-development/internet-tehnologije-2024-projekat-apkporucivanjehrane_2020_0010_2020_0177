@@ -1,0 +1,371 @@
+{
+	"info": {
+		"name": "Dostava Hrane API",
+		"description": "Laravel REST API za poručivanje hrane iz lokalnih restorana",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/health",
+					"host": ["{{base_url}}"],
+					"path": ["health"]
+				}
+			}
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Marko Marković\",\n    \"email\": \"marko@test.com\",\n    \"password\": \"password123\",\n    \"password_confirmation\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/register",
+							"host": ["{{base_url}}"],
+							"path": ["auth", "register"]
+						}
+					}
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@dostava.com\",\n    \"password\": \"admin123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": ["{{base_url}}"],
+							"path": ["auth", "login"]
+						}
+					}
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/auth/logout",
+							"host": ["{{base_url}}"],
+							"path": ["auth", "logout"]
+						}
+					}
+				},
+				{
+					"name": "Me",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/auth/me",
+							"host": ["{{base_url}}"],
+							"path": ["auth", "me"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Kategorije",
+			"item": [
+				{
+					"name": "Sve kategorije",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/public/kategorije",
+							"host": ["{{base_url}}"],
+							"path": ["public", "kategorije"]
+						}
+					}
+				},
+				{
+					"name": "Jedna kategorija",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/public/kategorije/1",
+							"host": ["{{base_url}}"],
+							"path": ["public", "kategorije", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Restorani",
+			"item": [
+				{
+					"name": "Svi restorani",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/public/restorani",
+							"host": ["{{base_url}}"],
+							"path": ["public", "restorani"]
+						}
+					}
+				},
+				{
+					"name": "Pretraga restorana",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/public/restorani?search=tri&category_id=1&per_page=5",
+							"host": ["{{base_url}}"],
+							"path": ["public", "restorani"],
+							"query": [
+								{
+									"key": "search",
+									"value": "tri"
+								},
+								{
+									"key": "category_id",
+									"value": "1"
+								},
+								{
+									"key": "per_page",
+									"value": "5"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Detalji restorana",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/public/restorani/1",
+							"host": ["{{base_url}}"],
+							"path": ["public", "restorani", "1"]
+						}
+					}
+				},
+				{
+					"name": "Meni restorana",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/public/restorani/1/meni",
+							"host": ["{{base_url}}"],
+							"path": ["public", "restorani", "1", "meni"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Proizvodi",
+			"item": [
+				{
+					"name": "Svi proizvodi",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/public/proizvodi",
+							"host": ["{{base_url}}"],
+							"path": ["public", "proizvodi"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Porudžbine",
+			"item": [
+				{
+					"name": "Moje porudžbine",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/porudzbine",
+							"host": ["{{base_url}}"],
+							"path": ["porudzbine"]
+						}
+					}
+				},
+				{
+					"name": "Kreiraj porudžbinu",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"restoran_id\": 1,\n    \"delivery_address\": \"Knez Mihailova 12, Beograd\",\n    \"note\": \"Bez luka\",\n    \"proizvodi\": [\n        {\n            \"id\": 1,\n            \"quantity\": 2\n        },\n        {\n            \"id\": 2,\n            \"quantity\": 1\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/porudzbine",
+							"host": ["{{base_url}}"],
+							"path": ["porudzbine"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Vremenska Prognoza",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/public/vremenska-prognoza",
+					"host": ["{{base_url}}"],
+					"path": ["public", "vremenska-prognoza"]
+				}
+			}
+		},
+		{
+			"name": "Statistika",
+			"item": [
+				{
+					"name": "Moje statistike",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/statistika/moje",
+							"host": ["{{base_url}}"],
+							"path": ["statistika", "moje"]
+						}
+					}
+				},
+				{
+					"name": "Popularni restorani",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/statistika/popularni-restorani",
+							"host": ["{{base_url}}"],
+							"path": ["statistika", "popularni-restorani"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Eksport",
+			"item": [
+				{
+					"name": "Moje porudžbine CSV",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/eksport/moje-porudzbine",
+							"host": ["{{base_url}}"],
+							"path": ["eksport", "moje-porudzbine"]
+						}
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000/api",
+			"type": "default"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
+
