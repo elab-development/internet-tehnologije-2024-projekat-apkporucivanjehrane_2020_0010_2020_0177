@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\KategorijaController;
 use App\Http\Controllers\Api\RestoranController;
 use App\Http\Controllers\Api\JeloController;
+use App\Http\Controllers\Api\PorudzbinaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -38,4 +39,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/jela', [JeloController::class, 'store']);
     Route::put('/jela/{jelo}', [JeloController::class, 'update']);
     Route::delete('/jela/{jelo}', [JeloController::class, 'destroy']);
+
+    // Rute za porudžbine
+    Route::get('/porudzbine', [PorudzbinaController::class, 'index']);
+    Route::post('/porudzbine', [PorudzbinaController::class, 'store']);
+    Route::get('/porudzbine/{porudzbina}', [PorudzbinaController::class, 'show']);
+    Route::patch('/porudzbine/{porudzbina}/status', [PorudzbinaController::class, 'updateStatus']);
 });
