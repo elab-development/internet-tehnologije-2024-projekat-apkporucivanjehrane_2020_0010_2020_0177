@@ -15,11 +15,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
+        // Kreiranje admin korisnika
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Administrator',
+            'email' => 'admin@dostava.rs',
+            'is_admin' => true,
+            'password' => bcrypt('password123'),
+        ]);
+
+        // Kreiranje običnog korisnika
+        User::factory()->create([
+            'name' => 'Marko Marković',
+            'email' => 'marko@example.com',
+            'is_admin' => false,
+            'password' => bcrypt('password123'),
+        ]);
+
+        // Poziv RestoranSeeder-a
+        $this->call([
+            RestoranSeeder::class,
         ]);
     }
 }
