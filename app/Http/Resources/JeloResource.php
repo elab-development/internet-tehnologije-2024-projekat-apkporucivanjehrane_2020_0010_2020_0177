@@ -17,10 +17,10 @@ class JeloResource extends JsonResource
             'slika' => $this->slika,
             'dostupno' => $this->dostupno,
             'kategorija_jela' => $this->kategorija_jela,
-            'restoran' => [
+            'restoran' => $this->when($this->relationLoaded('restoran'), [
                 'id' => $this->restoran->id,
                 'naziv' => $this->restoran->naziv,
-            ] when $this->relationLoaded('restoran'),
+            ]),
             'created_at' => $this->created_at->format('Y-m-d H:i:s'),
         ];
     }

@@ -18,12 +18,12 @@ class PorudzbinaResource extends JsonResource
             'ukupna_cena' => (float) $this->ukupna_cena,
             'status' => $this->status,
             'napomena' => $this->napomena,
-            'restoran' => [
+            'restoran' => $this->when($this->relationLoaded('restoran'), [
                 'id' => $this->restoran->id,
                 'naziv' => $this->restoran->naziv,
                 'cena_dostave' => (float) $this->restoran->cena_dostave,
                 'vreme_dostave' => $this->restoran->vreme_dostave,
-            ] when $this->relationLoaded('restoran'),
+            ]),
             'jela' => $this->whenLoaded('jela', function () {
                 return $this->jela->map(function ($jelo) {
                     return [
