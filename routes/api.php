@@ -26,19 +26,21 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', [AuthController::class, 'user']);
 
     // Admin rute za upravljanje kategorijama (zahtevaju admin prava)
-    Route::post('/kategorije', [KategorijaController::class, 'store']);
-    Route::put('/kategorije/{kategorija}', [KategorijaController::class, 'update']);
-    Route::delete('/kategorije/{kategorija}', [KategorijaController::class, 'destroy']);
+    Route::middleware('admin')->group(function () {
+        Route::post('/kategorije', [KategorijaController::class, 'store']);
+        Route::put('/kategorije/{kategorija}', [KategorijaController::class, 'update']);
+        Route::delete('/kategorije/{kategorija}', [KategorijaController::class, 'destroy']);
 
-    // Admin rute za upravljanje restoranima
-    Route::post('/restorani', [RestoranController::class, 'store']);
-    Route::put('/restorani/{restoran}', [RestoranController::class, 'update']);
-    Route::delete('/restorani/{restoran}', [RestoranController::class, 'destroy']);
+        // Admin rute za upravljanje restoranima
+        Route::post('/restorani', [RestoranController::class, 'store']);
+        Route::put('/restorani/{restoran}', [RestoranController::class, 'update']);
+        Route::delete('/restorani/{restoran}', [RestoranController::class, 'destroy']);
 
-    // Admin rute za upravljanje jelima
-    Route::post('/jela', [JeloController::class, 'store']);
-    Route::put('/jela/{jelo}', [JeloController::class, 'update']);
-    Route::delete('/jela/{jelo}', [JeloController::class, 'destroy']);
+        // Admin rute za upravljanje jelima
+        Route::post('/jela', [JeloController::class, 'store']);
+        Route::put('/jela/{jelo}', [JeloController::class, 'update']);
+        Route::delete('/jela/{jelo}', [JeloController::class, 'destroy']);
+    });
 
     // Rute za porudžbine
     Route::get('/porudzbine', [PorudzbinaController::class, 'index']);
