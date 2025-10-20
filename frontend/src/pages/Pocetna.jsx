@@ -9,18 +9,29 @@ const Pocetna = () => {
   const [restorani, setRestorani] = useState([]);
   const [loading, setLoading] = useState(true);
   const [pretraga, setPretraga] = useState('');
+  const [trenutnaStrana, setTrenutnaStrana] = useState(1);
+  const [ukupnoStrana, setUkupnoStrana] = useState(1);
   const navigate = useNavigate();
 
   useEffect(() => {
     ucitajRestorane();
-  }, []);
+  }, [trenutnaStrana]);
 
   const ucitajRestorane = async (searchTerm = '') => {
     setLoading(true);
     try {
-      const params = searchTerm ? { pretraga: searchTerm } : {};
+      const params = { 
+        per_page: 6,
+        page: trenutnaStrana
+      };
+      
+      if (searchTerm) {
+        params.pretraga = searchTerm;
+      }
+      
       const response = await restoraniAPI.getAll(params);
-      setRestorani(response.data.data || response.data);
+      setRestorani(response.data.data || []);
+      setUkupnoStrana(response.data.last_page || 1);
     } catch (error) {
       console.error('Greška pri učitavanju restorana:', error);
     } finally {
@@ -31,7 +42,15 @@ const Pocetna = () => {
   const handleSearch = (e) => {
     const value = e.target.value;
     setPretraga(value);
+    setTrenutnaStrana(1); // Reset na prvu stranu pri pretrazi
     ucitajRestorane(value);
+  };
+
+  const promeniStranu = (novaStrana) => {
+    if (novaStrana >= 1 && novaStrana <= ukupnoStrana) {
+      setTrenutnaStrana(novaStrana);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   if (loading) {
@@ -71,6 +90,30 @@ const Pocetna = () => {
             <p className="no-results">Nema pronađenih restorana</p>
           )}
         </div>
+
+        {ukupnoStrana > 1 && (
+          <div className="paginacija">
+            <button 
+              className="paginacija-btn"
+              onClick={() => promeniStranu(trenutnaStrana - 1)}
+              disabled={trenutnaStrana === 1}
+            >
+              ← Prethodna
+            </button>
+            
+            <div className="paginacija-info">
+              Strana {trenutnaStrana} od {ukupnoStrana}
+            </div>
+
+            <button 
+              className="paginacija-btn"
+              onClick={() => promeniStranu(trenutnaStrana + 1)}
+              disabled={trenutnaStrana === ukupnoStrana}
+            >
+              Sledeća →
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

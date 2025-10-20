@@ -53,6 +53,47 @@
   font-size: 18px;
 }
 
+.paginacija {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.paginacija-btn {
+  padding: 12px 24px;
+  background: #06ABD8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.paginacija-btn:hover:not(:disabled) {
+  background: #0590BA;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(6, 171, 216, 0.3);
+}
+
+.paginacija-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.paginacija-info {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  padding: 0 15px;
+}
+
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 32px;
@@ -64,6 +105,16 @@
 
   .restorani-grid {
     grid-template-columns: 1fr;
+  }
+
+  .paginacija {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .paginacija-btn {
+    width: 100%;
+    max-width: 250px;
   }
 }
 
