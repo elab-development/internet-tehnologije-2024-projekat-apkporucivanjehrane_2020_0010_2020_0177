@@ -101,6 +101,18 @@
   font-weight: 500;
 }
 
+/* Outline dugme u navbar-u treba biti belo */
+.navbar .dugme-outline {
+  border-color: white;
+  color: white;
+}
+
+.navbar .dugme-outline:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: white;
+  color: white;
+}
+
 @media (max-width: 768px) {
   .navbar-container {
     flex-direction: column;
