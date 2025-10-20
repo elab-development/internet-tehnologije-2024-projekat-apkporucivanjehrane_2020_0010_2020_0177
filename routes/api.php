@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\KategorijaController;
 use App\Http\Controllers\Api\RestoranController;
 use App\Http\Controllers\Api\JeloController;
 use App\Http\Controllers\Api\PorudzbinaController;
+use App\Http\Controllers\Api\VremeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,10 @@ Route::get('/restorani', [RestoranController::class, 'index']);
 Route::get('/restorani/{restoran}', [RestoranController::class, 'show']);
 Route::get('/jela', [JeloController::class, 'index']);
 Route::get('/jela/{jelo}', [JeloController::class, 'show']);
+
+// Vremenska prognoza (public ruta)
+Route::get('/vreme/beograd', [VremeController::class, 'getVremeZaBeograd']);
+Route::get('/vreme', [VremeController::class, 'getVremeZaGrad']);
 
 // Protected rute (zahtevaju autentifikaciju)
 Route::middleware('auth:sanctum')->group(function () {
