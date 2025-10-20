@@ -18,8 +18,7 @@ const NavBar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          <img src="/delivery-icon.png" alt="Delivery" className="navbar-logo-icon" />
-          Dostava Hrane
+          🍔 Dostava Hrane
         </Link>
         
         <div className="navbar-menu">
