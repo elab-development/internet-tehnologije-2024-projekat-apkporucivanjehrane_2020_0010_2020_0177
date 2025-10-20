@@ -1,0 +1,46 @@
+.dugme {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.dugme-primary {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.dugme-primary:hover {
+  background-color: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+}
+
+.dugme-secondary {
+  background-color: #4ecdc4;
+  color: white;
+}
+
+.dugme-secondary:hover {
+  background-color: #45b7af;
+}
+
+.dugme-outline {
+  background-color: transparent;
+  border: 2px solid #ff6b6b;
+  color: #ff6b6b;
+}
+
+.dugme-outline:hover {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.dugme:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+

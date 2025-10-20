@@ -1,0 +1,88 @@
+.kartica {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.kartica:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.kartica-slika {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.kartica-slika img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.kartica:hover .kartica-slika img {
+  transform: scale(1.05);
+}
+
+.kartica-sadrzaj {
+  padding: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.kartica-naslov {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.kartica-opis {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 15px 0;
+  flex: 1;
+  line-height: 1.5;
+}
+
+.kartica-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.kartica-cena {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff6b6b;
+}
+
+.kartica-ocena {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffa500;
+}
+
+.ocena-zvezda {
+  font-size: 18px;
+}
+
+.kartica-actions {
+  margin-top: 15px;
+}
+
