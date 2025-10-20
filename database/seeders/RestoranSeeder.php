@@ -16,25 +16,25 @@ class RestoranSeeder extends Seeder
         $brzaHrana = Kategorija::create([
             'naziv' => 'Brza hrana',
             'opis' => 'Brza i ukusna hrana za svakodnevne trenutke',
-            'slika' => 'https://via.placeholder.com/300x200?text=Brza+Hrana',
+            'slika' => 'https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=300&h=200&fit=crop',
         ]);
 
         $pizza = Kategorija::create([
             'naziv' => 'Pica',
             'opis' => 'Najbolje pice u gradu',
-            'slika' => 'https://via.placeholder.com/300x200?text=Pizza',
+            'slika' => 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=300&h=200&fit=crop',
         ]);
 
         $italijanska = Kategorija::create([
             'naziv' => 'Italijanska kuhinja',
             'opis' => 'Autentična italijanska jela',
-            'slika' => 'https://via.placeholder.com/300x200?text=Italiano',
+            'slika' => 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=300&h=200&fit=crop',
         ]);
 
         $rostilj = Kategorija::create([
             'naziv' => 'Roštilj',
             'opis' => 'Tradicionalni roštilj i mesne specijalitete',
-            'slika' => 'https://via.placeholder.com/300x200?text=Rostilj',
+            'slika' => 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=300&h=200&fit=crop',
         ]);
 
         // Kreiranje restorana
@@ -46,6 +46,7 @@ class RestoranSeeder extends Seeder
             'adresa' => 'Knez Mihailova 25, Beograd',
             'telefon' => '011-1234567',
             'email' => 'info@fastbite.rs',
+            'slika' => 'https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&h=300&fit=crop',
             'cena_dostave' => 250,
             'vreme_dostave' => 25,
             'ocena' => 4.5,
@@ -60,6 +61,7 @@ class RestoranSeeder extends Seeder
             'adresa' => 'Skadarlija 15, Beograd',
             'telefon' => '011-2345678',
             'email' => 'kontakt@bellanapoli.rs',
+            'slika' => 'https://images.unsplash.com/photo-1579751626657-72bc17010498?w=400&h=300&fit=crop',
             'cena_dostave' => 300,
             'vreme_dostave' => 30,
             'ocena' => 4.7,
@@ -74,6 +76,7 @@ class RestoranSeeder extends Seeder
             'adresa' => 'Bulevar kralja Aleksandra 45, Beograd',
             'telefon' => '011-3456789',
             'email' => 'porudzbine@rostiljmajstor.rs',
+            'slika' => 'https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=300&fit=crop',
             'cena_dostave' => 200,
             'vreme_dostave' => 35,
             'ocena' => 4.8,
@@ -88,6 +91,7 @@ class RestoranSeeder extends Seeder
             'adresa' => 'Makedonska 32, Beograd',
             'telefon' => '011-4567890',
             'email' => 'hello@pastagrande.rs',
+            'slika' => 'https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400&h=300&fit=crop',
             'cena_dostave' => 350,
             'vreme_dostave' => 28,
             'ocena' => 4.6,
@@ -97,19 +101,19 @@ class RestoranSeeder extends Seeder
         $azijska = Kategorija::create([
             'naziv' => 'Azijska kuhinja',
             'opis' => 'Autentična azijska jela - sushi, wok, Thai',
-            'slika' => 'https://via.placeholder.com/300x200?text=Asian',
+            'slika' => 'https://images.unsplash.com/photo-1563612116625-3012372fccce?w=300&h=200&fit=crop',
         ]);
 
         $desert = Kategorija::create([
             'naziv' => 'Poslastičarnica',
             'opis' => 'Slatke poslastice i deserti',
-            'slika' => 'https://via.placeholder.com/300x200?text=Desert',
+            'slika' => 'https://images.unsplash.com/photo-1551024506-0bccd828d307?w=300&h=200&fit=crop',
         ]);
 
         $rostilj2 = Kategorija::create([
             'naziv' => 'Zdravo i organsko',
             'opis' => 'Zdravi obroci, salate i smoothie',
-            'slika' => 'https://via.placeholder.com/300x200?text=Healthy',
+            'slika' => 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=300&h=200&fit=crop',
         ]);
 
         // Novi restorani
@@ -121,6 +125,7 @@ class RestoranSeeder extends Seeder
             'adresa' => 'Terazije 15, Beograd',
             'telefon' => '011-5678901',
             'email' => 'info@sushimaster.rs',
+            'slika' => 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=400&h=300&fit=crop',
             'cena_dostave' => 400,
             'vreme_dostave' => 40,
             'ocena' => 4.9,
@@ -135,6 +140,7 @@ class RestoranSeeder extends Seeder
             'adresa' => 'Vuka Karadžića 8, Beograd',
             'telefon' => '011-6789012',
             'email' => 'porudzbine@sweetdreams.rs',
+            'slika' => 'https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=400&h=300&fit=crop',
             'cena_dostave' => 200,
             'vreme_dostave' => 20,
             'ocena' => 4.8,
@@ -149,6 +155,7 @@ class RestoranSeeder extends Seeder
             'adresa' => 'Zmaj Jovina 12, Beograd',
             'telefon' => '011-7890123',
             'email' => 'hello@greenlife.rs',
+            'slika' => 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&h=300&fit=crop',
             'cena_dostave' => 250,
             'vreme_dostave' => 25,
             'ocena' => 4.7,
@@ -161,7 +168,7 @@ class RestoranSeeder extends Seeder
             'naziv' => 'Big Burger',
             'opis' => 'Veliki burger sa mesom, sirom i povrćem',
             'cena' => 550,
-            'slika' => 'https://via.placeholder.com/300x200?text=Burger',
+            'slika' => 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=300&h=200&fit=crop',
             'dostupno' => true,
             'kategorija_jela' => 'Glavno jelo',
         ]);
@@ -171,7 +178,7 @@ class RestoranSeeder extends Seeder
             'naziv' => 'Pomfrit',
             'opis' => 'Hrskav pomfrit',
             'cena' => 200,
-            'slika' => 'https://via.placeholder.com/300x200?text=Pomfrit',
+            'slika' => 'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=300&h=200&fit=crop',
             'dostupno' => true,
             'kategorija_jela' => 'Prilog',
         ]);
@@ -182,7 +189,7 @@ class RestoranSeeder extends Seeder
             'naziv' => 'Pizza Margherita',
             'opis' => 'Klasična pizza sa paradajzom, mocarelom i bosiljkom',
             'cena' => 850,
-            'slika' => 'https://via.placeholder.com/300x200?text=Margherita',
+            'slika' => 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=300&h=200&fit=crop',
             'dostupno' => true,
             'kategorija_jela' => 'Glavno jelo',
         ]);
@@ -192,7 +199,7 @@ class RestoranSeeder extends Seeder
             'naziv' => 'Pizza Quattro Formaggi',
             'opis' => 'Pizza sa četiri vrste sira',
             'cena' => 950,
-            'slika' => 'https://via.placeholder.com/300x200?text=4+Formaggi',
+            'slika' => 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=300&h=200&fit=crop',
             'dostupno' => true,
             'kategorija_jela' => 'Glavno jelo',
         ]);
@@ -203,7 +210,7 @@ class RestoranSeeder extends Seeder
             'naziv' => 'Ćevapi (10kom)',
             'opis' => 'Tradicionalni ćevapi sa lepinjom i lukom',
             'cena' => 450,
-            'slika' => 'https://via.placeholder.com/300x200?text=Cevapi',
+            'slika' => 'https://images.unsplash.com/photo-1607330289024-8768f379d61b?w=300&h=200&fit=crop',
             'dostupno' => true,
             'kategorija_jela' => 'Glavno jelo',
         ]);
@@ -213,7 +220,7 @@ class RestoranSeeder extends Seeder
             'naziv' => 'Pljeskavica',
             'opis' => 'Velika pljeskavica sa kajmakom',
             'cena' => 520,
-            'slika' => 'https://via.placeholder.com/300x200?text=Pljeskavica',
+            'slika' => 'https://images.unsplash.com/photo-1619740455993-8dabb6c8e7d7?w=300&h=200&fit=crop',
             'dostupno' => true,
             'kategorija_jela' => 'Glavno jelo',
         ]);
@@ -224,7 +231,7 @@ class RestoranSeeder extends Seeder
             'naziv' => 'Carbonara',
             'opis' => 'Pasta sa slaninom, jajima i parmezanom',
             'cena' => 750,
-            'slika' => 'https://via.placeholder.com/300x200?text=Carbonara',
+            'slika' => 'https://images.unsplash.com/photo-1612874742237-6526221588e3?w=300&h=200&fit=crop',
             'dostupno' => true,
             'kategorija_jela' => 'Glavno jelo',
         ]);
@@ -234,7 +241,7 @@ class RestoranSeeder extends Seeder
             'naziv' => 'Lasagna',
             'opis' => 'Domaća lazanja sa mesom i bešamel sosom',
             'cena' => 820,
-            'slika' => 'https://via.placeholder.com/300x200?text=Lasagna',
+            'slika' => 'https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=300&h=200&fit=crop',
             'dostupno' => true,
             'kategorija_jela' => 'Glavno jelo',
         ]);
@@ -245,7 +252,7 @@ class RestoranSeeder extends Seeder
             'naziv' => 'California Roll',
             'opis' => 'Sushi rolna sa lososom i avokadom',
             'cena' => 950,
-            'slika' => 'https://via.placeholder.com/300x200?text=California+Roll',
+            'slika' => 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=300&h=200&fit=crop',
             'dostupno' => true,
             'kategorija_jela' => 'Glavno jelo',
         ]);
@@ -255,7 +262,7 @@ class RestoranSeeder extends Seeder
             'naziv' => 'Miso Supa',
             'opis' => 'Tradicionalna japanska supa',
             'cena' => 350,
-            'slika' => 'https://via.placeholder.com/300x200?text=Miso',
+            'slika' => 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=300&h=200&fit=crop',
             'dostupno' => true,
             'kategorija_jela' => 'Predjelo',
         ]);
@@ -266,7 +273,7 @@ class RestoranSeeder extends Seeder
             'naziv' => 'Čokoladna Torta',
             'opis' => 'Bogata čokoladna torta sa višnjama',
             'cena' => 450,
-            'slika' => 'https://via.placeholder.com/300x200?text=Chocolate+Cake',
+            'slika' => 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=300&h=200&fit=crop',
             'dostupno' => true,
             'kategorija_jela' => 'Desert',
         ]);
@@ -276,7 +283,7 @@ class RestoranSeeder extends Seeder
             'naziv' => 'Tiramisu',
             'opis' => 'Klasični italijanski desert',
             'cena' => 380,
-            'slika' => 'https://via.placeholder.com/300x200?text=Tiramisu',
+            'slika' => 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=300&h=200&fit=crop',
             'dostupno' => true,
             'kategorija_jela' => 'Desert',
         ]);
@@ -287,7 +294,7 @@ class RestoranSeeder extends Seeder
             'naziv' => 'Caesar Salata',
             'opis' => 'Svež zeleni salat sa piletinom i parmezanom',
             'cena' => 550,
-            'slika' => 'https://via.placeholder.com/300x200?text=Caesar',
+            'slika' => 'https://images.unsplash.com/photo-1546793665-c74683f339c1?w=300&h=200&fit=crop',
             'dostupno' => true,
             'kategorija_jela' => 'Glavno jelo',
         ]);
@@ -297,7 +304,7 @@ class RestoranSeeder extends Seeder
             'naziv' => 'Acai Bowl',
             'opis' => 'Smoothie bowl sa voćem i granolom',
             'cena' => 480,
-            'slika' => 'https://via.placeholder.com/300x200?text=Acai+Bowl',
+            'slika' => 'https://images.unsplash.com/photo-1590301157890-4810ed352733?w=300&h=200&fit=crop',
             'dostupno' => true,
             'kategorija_jela' => 'Desert',
         ]);
