@@ -12,7 +12,7 @@
 }
 
 .required {
-  color: #ff6b6b;
+  color: #FFB94A;
 }
 
 .input {
@@ -25,7 +25,7 @@
 }
 
 .input:focus {
-  border-color: #ff6b6b;
+  border-color: #FFB94A;
   box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
 }
 

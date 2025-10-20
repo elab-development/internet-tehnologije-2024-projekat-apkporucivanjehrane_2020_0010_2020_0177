@@ -18,7 +18,7 @@
 .navbar-logo {
   font-size: 24px;
   font-weight: 700;
-  color: #ff6b6b;
+  color: #FFB94A;
   text-decoration: none;
   transition: transform 0.3s ease;
 }
@@ -41,7 +41,7 @@
 }
 
 .navbar-link:hover {
-  color: #ff6b6b;
+  color: #FFB94A;
 }
 
 .navbar-actions {

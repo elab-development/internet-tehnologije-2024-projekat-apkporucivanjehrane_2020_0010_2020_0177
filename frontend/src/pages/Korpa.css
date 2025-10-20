@@ -79,7 +79,7 @@
 }
 
 .stavka-kontrole button {
-  background: #ff6b6b;
+  background: #FFB94A;
   color: white;
   border: none;
   width: 30px;
@@ -93,12 +93,12 @@
 }
 
 .stavka-kontrole button:hover {
-  background: #ff5252;
+  background: #FF9800;
 }
 
 .stavka-ukupno {
   font-weight: 700;
-  color: #ff6b6b;
+  color: #FFB94A;
   font-size: 18px;
 }
 
@@ -134,7 +134,7 @@
 }
 
 .korpa-ukupno strong {
-  color: #ff6b6b;
+  color: #FFB94A;
 }
 
 .korpa-akcije {

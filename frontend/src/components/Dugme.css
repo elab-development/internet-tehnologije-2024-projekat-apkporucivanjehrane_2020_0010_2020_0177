@@ -9,14 +9,14 @@
 }
 
 .dugme-primary {
-  background-color: #ff6b6b;
+  background-color: #FFB94A;
   color: white;
 }
 
 .dugme-primary:hover {
-  background-color: #ff5252;
+  background-color: #FF9800;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 4px 8px rgba(255, 185, 74, 0.3);
 }
 
 .dugme-secondary {
@@ -30,12 +30,12 @@
 
 .dugme-outline {
   background-color: transparent;
-  border: 2px solid #ff6b6b;
-  color: #ff6b6b;
+  border: 2px solid #FFB94A;
+  color: #FFB94A;
 }
 
 .dugme-outline:hover {
-  background-color: #ff6b6b;
+  background-color: #FFB94A;
   color: white;
 }
 
