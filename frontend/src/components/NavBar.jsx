@@ -1,10 +1,12 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useKorpa } from '../context/KorpaContext';
 import Dugme from './Dugme';
 import './NavBar.css';
 
 const NavBar = () => {
   const { user, logout } = useAuth();
+  const { brojStavki } = useKorpa();
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -24,8 +26,12 @@ const NavBar = () => {
           {user && (
             <>
               <Link to="/porudzbine" className="navbar-link">Moje Porudžbine</Link>
-              <Link to="/korpa" className="navbar-link">
-                Korpa 🛒
+              <Link to="/korpa" className="navbar-link korpa-link">
+                <span className="korpa-ikonica">🛒</span>
+                <span className="korpa-tekst">Korpa</span>
+                {brojStavki > 0 && (
+                  <span className="korpa-brojac">{brojStavki}</span>
+                )}
               </Link>
             </>
           )}

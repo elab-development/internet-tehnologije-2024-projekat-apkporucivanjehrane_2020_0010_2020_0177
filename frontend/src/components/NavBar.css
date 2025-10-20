@@ -38,10 +38,53 @@
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
+  position: relative;
 }
 
 .navbar-link:hover {
   color: #FFB94A;
+}
+
+.korpa-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #06ABD8;
+  color: white !important;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.korpa-link:hover {
+  background: #0590BA !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(6, 171, 216, 0.3);
+}
+
+.korpa-ikonica {
+  font-size: 20px;
+}
+
+.korpa-tekst {
+  font-weight: 600;
+}
+
+.korpa-brojac {
+  background: #FFB94A;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+  min-width: 20px;
+  text-align: center;
+  animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
 }
 
 .navbar-actions {
