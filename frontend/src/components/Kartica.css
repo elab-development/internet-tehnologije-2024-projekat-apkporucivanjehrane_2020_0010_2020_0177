@@ -78,7 +78,7 @@
 .cena-iznos {
   font-size: 18px;
   font-weight: 700;
-  color: #FFB94A;
+  color: #06ABD8;
 }
 
 .kartica-ocena {
@@ -87,7 +87,7 @@
   gap: 5px;
   font-size: 16px;
   font-weight: 600;
-  color: #ffa500;
+  color: #06ABD8;
 }
 
 .ocena-zvezda {

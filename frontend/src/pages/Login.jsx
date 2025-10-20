@@ -26,7 +26,7 @@ const Login = () => {
   };
 
   return (
-    <div className="auth-container">
+    <div className="auth-container auth-container-login">
       <div className="auth-card">
         <h2 className="auth-title">Prijava</h2>
         
