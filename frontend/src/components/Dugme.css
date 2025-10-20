@@ -1,46 +1,63 @@
 .dugme {
-  padding: 10px 20px;
+  padding: 14px 32px;
   border: none;
-  border-radius: 5px;
+  border-radius: 12px;
   font-size: 16px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Muli', 'Inter', sans-serif;
 }
 
 .dugme-primary {
-  background-color: #FFB94A;
+  background: linear-gradient(135deg, #06ABD8, #0590BA);
   color: white;
+  box-shadow: 0 4px 15px rgba(6, 171, 216, 0.25);
 }
 
 .dugme-primary:hover {
-  background-color: #FF9800;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(255, 185, 74, 0.3);
+  background: linear-gradient(135deg, #0590BA, #0476A0);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(6, 171, 216, 0.35);
+}
+
+.dugme-primary:active {
+  transform: translateY(-1px);
 }
 
 .dugme-secondary {
-  background-color: #4ecdc4;
+  background: linear-gradient(135deg, #4CAF50, #45a049);
   color: white;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.25);
 }
 
 .dugme-secondary:hover {
-  background-color: #45b7af;
+  background: linear-gradient(135deg, #45a049, #388e3c);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.35);
 }
 
 .dugme-outline {
   background-color: transparent;
-  border: 2px solid #FFB94A;
-  color: #FFB94A;
+  border: 2px solid #06ABD8;
+  color: #06ABD8;
+  box-shadow: none;
 }
 
 .dugme-outline:hover {
-  background-color: #FFB94A;
-  color: white;
+  background-color: rgba(6, 171, 216, 0.1);
+  border-color: #0590BA;
+  color: #0590BA;
 }
 
 .dugme:disabled {
-  opacity: 0.6;
+  opacity: 0.5;
   cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
 }
-
