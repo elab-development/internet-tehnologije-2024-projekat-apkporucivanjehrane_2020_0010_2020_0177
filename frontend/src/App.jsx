@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import DetaljiRestorana from './pages/DetaljiRestorana';
 import Korpa from './pages/Korpa';
+import Narucivanje from './pages/Narucivanje';
 import MojePorudzbine from './pages/MojePorudzbine';
 import './App.css';
 
@@ -31,6 +32,14 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path="/restoran/:id" element={<DetaljiRestorana />} />
                 <Route path="/korpa" element={<Korpa />} />
+                <Route 
+                  path="/narucivanje" 
+                  element={
+                    <PrivateRoute>
+                      <Narucivanje />
+                    </PrivateRoute>
+                  } 
+                />
                 <Route 
                   path="/porudzbine" 
                   element={

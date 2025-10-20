@@ -63,7 +63,7 @@ const Login = () => {
         <div className="demo-credentials">
           <p><strong>Demo nalozi:</strong></p>
           <p>Admin: admin@dostava.rs / password123</p>
-          <p>Korisnik: marko@example.com / password123</p>
+          <p>Korisnik: mateja@example.com / mv12345</p>
         </div>
       </div>
     </div>

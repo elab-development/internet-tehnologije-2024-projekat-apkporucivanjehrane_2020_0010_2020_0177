@@ -13,9 +13,13 @@ const MojePorudzbine = () => {
   const ucitajPorudzbine = async () => {
     try {
       const response = await porudzbineAPI.getAll();
-      setPorudzbine(response.data.data || response.data);
+      console.log('API odgovor:', response.data);
+      // Podržava i paginirane i obične odgovore
+      const podaci = response.data.data || response.data;
+      setPorudzbine(Array.isArray(podaci) ? podaci : []);
     } catch (error) {
       console.error('Greška:', error);
+      setPorudzbine([]);
     } finally {
       setLoading(false);
     }
@@ -58,12 +62,16 @@ const MojePorudzbine = () => {
               </div>
 
               <div className="porudzbina-stavke">
-                {porudzbina.jela && porudzbina.jela.map((jelo) => (
-                  <div key={jelo.id} className="stavka">
-                    <span>{jelo.naziv} x{jelo.kolicina}</span>
-                    <span>{jelo.cena_stavke * jelo.kolicina} RSD</span>
-                  </div>
-                ))}
+                {porudzbina.jela && porudzbina.jela.length > 0 ? (
+                  porudzbina.jela.map((jelo) => (
+                    <div key={jelo.id} className="stavka">
+                      <span>{jelo.naziv} x{jelo.kolicina || jelo.pivot?.kolicina || 1}</span>
+                      <span>{(jelo.cena_stavke || jelo.pivot?.cena_stavke || 0) * (jelo.kolicina || jelo.pivot?.kolicina || 1)} RSD</span>
+                    </div>
+                  ))
+                ) : (
+                  <p>Nema stavki</p>
+                )}
               </div>
 
               <div className="porudzbina-footer">

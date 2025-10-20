@@ -25,10 +25,10 @@ class DatabaseSeeder extends Seeder
 
         // Kreiranje običnog korisnika
         User::factory()->create([
-            'name' => 'Marko Marković',
-            'email' => 'marko@example.com',
+            'name' => 'Mateja Veličkov',
+            'email' => 'mateja@example.com',
             'is_admin' => false,
-            'password' => bcrypt('password123'),
+            'password' => bcrypt('mv12345'),
         ]);
 
         // Poziv RestoranSeeder-a

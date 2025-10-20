@@ -126,10 +126,10 @@ POST /api/register
 Content-Type: application/json
 
 {
-  "name": "Marko Marković",
-  "email": "marko@example.com",
-  "password": "password123",
-  "password_confirmation": "password123"
+  "name": "Mateja Veličkov",
+  "email": "mateja@example.com",
+  "password": "mv12345",
+  "password_confirmation": "mv12345"
 }
 ```
 
@@ -139,8 +139,8 @@ POST /api/login
 Content-Type: application/json
 
 {
-  "email": "marko@example.com",
-  "password": "password123"
+  "email": "mateja@example.com",
+  "password": "mv12345"
 }
 ```
 
@@ -208,8 +208,8 @@ Content-Type: application/json
 
 {
   "restoran_id": 1,
-  "ime_kupca": "Marko Marković",
-  "email_kupca": "marko@example.com",
+  "ime_kupca": "Mateja Veličkov",
+  "email_kupca": "mateja@example.com",
   "telefon_kupca": "0641234567",
   "adresa_dostave": "Knez Mihailova 10, Beograd",
   "napomena": "Bez luka",
@@ -266,8 +266,8 @@ Authorization: Bearer {admin-token}
 - Prava: Puno upravljanje svim resursima
 
 ### Obični Korisnik
-- Email: `marko@example.com`
-- Password: `password123`
+- Email: `mateja@example.com`
+- Password: `mv12345`
 - Prava: Pregled i kreiranje porudžbina
 
 ## 🧪 Testiranje

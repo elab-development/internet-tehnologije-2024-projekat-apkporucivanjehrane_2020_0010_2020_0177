@@ -133,8 +133,8 @@ http://localhost:5173
 - Prava: Upravljanje svim resursima
 
 **Običan Korisnik:**
-- Email: `marko@example.com`
-- Password: `password123`
+- Email: `mateja@example.com`
+- Password: `mv12345`
 - Prava: Pregled i kreiranje porudžbina
 
 ---
