@@ -94,6 +94,67 @@ class RestoranSeeder extends Seeder
             'aktivan' => true,
         ]);
 
+        $azijska = Kategorija::create([
+            'naziv' => 'Azijska kuhinja',
+            'opis' => 'Autentična azijska jela - sushi, wok, Thai',
+            'slika' => 'https://via.placeholder.com/300x200?text=Asian',
+        ]);
+
+        $desert = Kategorija::create([
+            'naziv' => 'Poslastičarnica',
+            'opis' => 'Slatke poslastice i deserti',
+            'slika' => 'https://via.placeholder.com/300x200?text=Desert',
+        ]);
+
+        $rostilj2 = Kategorija::create([
+            'naziv' => 'Zdravo i organsko',
+            'opis' => 'Zdravi obroci, salate i smoothie',
+            'slika' => 'https://via.placeholder.com/300x200?text=Healthy',
+        ]);
+
+        // Novi restorani
+        $restoran5 = Restoran::create([
+            'kategorija_id' => $azijska->id,
+            'naziv' => 'Sushi Master',
+            'slug' => 'sushi-master',
+            'opis' => 'Najbolji sushi u gradu, svež i ukusan',
+            'adresa' => 'Terazije 15, Beograd',
+            'telefon' => '011-5678901',
+            'email' => 'info@sushimaster.rs',
+            'cena_dostave' => 400,
+            'vreme_dostave' => 40,
+            'ocena' => 4.9,
+            'aktivan' => true,
+        ]);
+
+        $restoran6 = Restoran::create([
+            'kategorija_id' => $desert->id,
+            'naziv' => 'Sweet Dreams',
+            'slug' => 'sweet-dreams',
+            'opis' => 'Torte, kolači i čokoladni specijaliteti',
+            'adresa' => 'Vuka Karadžića 8, Beograd',
+            'telefon' => '011-6789012',
+            'email' => 'porudzbine@sweetdreams.rs',
+            'cena_dostave' => 200,
+            'vreme_dostave' => 20,
+            'ocena' => 4.8,
+            'aktivan' => true,
+        ]);
+
+        $restoran7 = Restoran::create([
+            'kategorija_id' => $rostilj2->id,
+            'naziv' => 'Green Life',
+            'slug' => 'green-life',
+            'opis' => 'Zdrave salate, smoothie bowl i organski obroci',
+            'adresa' => 'Zmaj Jovina 12, Beograd',
+            'telefon' => '011-7890123',
+            'email' => 'hello@greenlife.rs',
+            'cena_dostave' => 250,
+            'vreme_dostave' => 25,
+            'ocena' => 4.7,
+            'aktivan' => true,
+        ]);
+
         // Dodavanje jela za FastBite
         Jelo::create([
             'restoran_id' => $restoran1->id,
@@ -176,6 +237,69 @@ class RestoranSeeder extends Seeder
             'slika' => 'https://via.placeholder.com/300x200?text=Lasagna',
             'dostupno' => true,
             'kategorija_jela' => 'Glavno jelo',
+        ]);
+
+        // Dodavanje jela za Sushi Master
+        Jelo::create([
+            'restoran_id' => $restoran5->id,
+            'naziv' => 'California Roll',
+            'opis' => 'Sushi rolna sa lososom i avokadom',
+            'cena' => 950,
+            'slika' => 'https://via.placeholder.com/300x200?text=California+Roll',
+            'dostupno' => true,
+            'kategorija_jela' => 'Glavno jelo',
+        ]);
+
+        Jelo::create([
+            'restoran_id' => $restoran5->id,
+            'naziv' => 'Miso Supa',
+            'opis' => 'Tradicionalna japanska supa',
+            'cena' => 350,
+            'slika' => 'https://via.placeholder.com/300x200?text=Miso',
+            'dostupno' => true,
+            'kategorija_jela' => 'Predjelo',
+        ]);
+
+        // Dodavanje jela za Sweet Dreams
+        Jelo::create([
+            'restoran_id' => $restoran6->id,
+            'naziv' => 'Čokoladna Torta',
+            'opis' => 'Bogata čokoladna torta sa višnjama',
+            'cena' => 450,
+            'slika' => 'https://via.placeholder.com/300x200?text=Chocolate+Cake',
+            'dostupno' => true,
+            'kategorija_jela' => 'Desert',
+        ]);
+
+        Jelo::create([
+            'restoran_id' => $restoran6->id,
+            'naziv' => 'Tiramisu',
+            'opis' => 'Klasični italijanski desert',
+            'cena' => 380,
+            'slika' => 'https://via.placeholder.com/300x200?text=Tiramisu',
+            'dostupno' => true,
+            'kategorija_jela' => 'Desert',
+        ]);
+
+        // Dodavanje jela za Green Life
+        Jelo::create([
+            'restoran_id' => $restoran7->id,
+            'naziv' => 'Caesar Salata',
+            'opis' => 'Svež zeleni salat sa piletinom i parmezanom',
+            'cena' => 550,
+            'slika' => 'https://via.placeholder.com/300x200?text=Caesar',
+            'dostupno' => true,
+            'kategorija_jela' => 'Glavno jelo',
+        ]);
+
+        Jelo::create([
+            'restoran_id' => $restoran7->id,
+            'naziv' => 'Acai Bowl',
+            'opis' => 'Smoothie bowl sa voćem i granolom',
+            'cena' => 480,
+            'slika' => 'https://via.placeholder.com/300x200?text=Acai+Bowl',
+            'dostupno' => true,
+            'kategorija_jela' => 'Desert',
         ]);
     }
 }

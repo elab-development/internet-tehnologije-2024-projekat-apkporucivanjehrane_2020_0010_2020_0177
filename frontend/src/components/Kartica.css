@@ -64,6 +64,18 @@
 }
 
 .kartica-cena {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cena-label {
+  font-size: 12px;
+  color: #999;
+  font-weight: 500;
+}
+
+.cena-iznos {
   font-size: 18px;
   font-weight: 700;
   color: #ff6b6b;

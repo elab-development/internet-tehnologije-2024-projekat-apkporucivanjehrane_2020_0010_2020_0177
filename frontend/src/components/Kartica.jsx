@@ -22,8 +22,9 @@ const Kartica = ({
         {opis && <p className="kartica-opis">{opis}</p>}
         
         <div className="kartica-footer">
-          {cena && (
+          {cena !== undefined && (
             <div className="kartica-cena">
+              <span className="cena-label">Dostava</span>
               <span className="cena-iznos">{cena} RSD</span>
             </div>
           )}
