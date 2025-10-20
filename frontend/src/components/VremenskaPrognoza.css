@@ -1,0 +1,46 @@
+.vremenska-prognoza {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 25px;
+  border-radius: 15px;
+  margin: 20px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.vremenska-prognoza h3 {
+  margin: 0 0 15px 0;
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+.vreme-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.temperatura {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.opis {
+  font-size: 18px;
+  text-transform: capitalize;
+  opacity: 0.9;
+}
+
+.detalji {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+  opacity: 0.85;
+  font-size: 14px;
+}
+
+.vreme-loading {
+  padding: 20px;
+  text-align: center;
+  color: #666;
+}
+
