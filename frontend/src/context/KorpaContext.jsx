@@ -10,7 +10,7 @@ export const useKorpa = () => {
   return context;
 };
 
-export const KorpaContext Provider = ({ children }) => {
+export const KorpaProvider = ({ children }) => {
   const [stavke, setStavke] = useState([]);
   const [restoran, setRestoran] = useState(null);
 
