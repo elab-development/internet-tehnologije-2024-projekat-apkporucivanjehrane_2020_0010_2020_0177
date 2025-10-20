@@ -1,61 +1,301 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🍔 Aplikacija za Poručivanje Hrane
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Veb aplikacija koja omogućava korisnicima da naruče hranu iz najbližih restorana. Projekat je razvijen korišćenjem Laravel backend-a i React frontend-a.
 
-## About Laravel
+## 📋 Sadržaj
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- [Funkcionalnosti](#funkcionalnosti)
+- [Tehnologije](#tehnologije)
+- [Instalacija](#instalacija)
+- [API Dokumentacija](#api-dokumentacija)
+- [Korisničke Uloge](#korisničke-uloge)
+- [Autori](#autori)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✨ Funkcionalnosti
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Korisnički Deo
+- ✅ Registracija i prijava korisnika
+- ✅ Pregled kategorija restorana
+- ✅ Pretraživanje restorana po nazivu
+- ✅ Filter restorana po kategoriji
+- ✅ Dodavanje jela u korpu
+- ✅ Kreiranje porudžbine
+- ✅ Pregled istorije porudžbina
+- ✅ Provera vremenske prognoze za Beograd
+- ✅ Prikaz mape
 
-## Learning Laravel
+### Administratorski Deo
+- ✅ Upravljanje kategorijama (CRUD)
+- ✅ Upravljanje restoranima (CRUD)
+- ✅ Upravljanje jelima (CRUD)
+- ✅ Ažuriranje statusa porudžbina
+- ✅ Eksport podataka u CSV format
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🛠️ Tehnologije
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Backend
+- **Laravel 12** - PHP framework
+- **MySQL** - Relaciona baza podataka
+- **Laravel Sanctum** - API autentifikacija
+- **OpenWeatherMap API** - Vremenska prognoza
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Frontend
+- **React 18** - JavaScript biblioteka
+- **React Router** - Routing
+- **Axios** - HTTP klijent
+- **Leaflet** - Mape
 
-## Laravel Sponsors
+## 📦 Instalacija
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Preduslovni
+- PHP >= 8.2
+- Composer
+- MySQL/MariaDB
+- Node.js >= 18
+- npm
 
-### Premium Partners
+### Backend Setup
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+1. **Kloniranje repositorijuma**
+```bash
+git clone https://github.com/elab-development/internet-tehnologije-2024-projekat-apkporucivanjehrane_2020_0010_2020_0177.git
+cd internet-tehnologije-2024-projekat-apkporucivanjehrane_2020_0010_2020_0177
+```
 
-## Contributing
+2. **Instalacija PHP dependencija**
+```bash
+composer install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+3. **Konfiguracija okruženja**
+```bash
+copy .env.example .env
+php artisan key:generate
+```
 
-## Code of Conduct
+4. **Podešavanje baze podataka**
+Kreirajte MySQL bazu i ažurirajte `.env`:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=dostava_hrane
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5. **Pokretanje migracija i seedera**
+```bash
+php artisan migrate:fresh --seed
+```
 
-## Security Vulnerabilities
+6. **Pokretanje backend servera**
+```bash
+php artisan serve
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Backend će biti dostupan na `http://localhost:8000`
 
-## License
+### Frontend Setup
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+1. **Instalacija frontend paketa**
+```bash
+cd frontend
+npm install
+```
+
+2. **Pokretanje frontend aplikacije**
+```bash
+npm start
+```
+
+Frontend će biti dostupan na `http://localhost:3000`
+
+## 📚 API Dokumentacija
+
+### Osnovni URL
+```
+http://localhost:8000/api
+```
+
+### Autentifikacija
+
+#### Registracija
+```http
+POST /api/register
+Content-Type: application/json
+
+{
+  "name": "Marko Marković",
+  "email": "marko@example.com",
+  "password": "password123",
+  "password_confirmation": "password123"
+}
+```
+
+#### Login
+```http
+POST /api/login
+Content-Type: application/json
+
+{
+  "email": "marko@example.com",
+  "password": "password123"
+}
+```
+
+**Response:**
+```json
+{
+  "message": "Uspešno prijavljivanje",
+  "user": {...},
+  "token": "1|xxxxxxxxxxxx"
+}
+```
+
+#### Logout
+```http
+POST /api/logout
+Authorization: Bearer {token}
+```
+
+### Kategorije
+
+#### Lista kategorija
+```http
+GET /api/kategorije
+```
+
+#### Pojedinačna kategorija
+```http
+GET /api/kategorije/{id}
+```
+
+### Restorani
+
+#### Lista restorana (sa filterima)
+```http
+GET /api/restorani?pretraga=pizza&kategorija_id=2&per_page=10
+```
+
+**Query parametri:**
+- `pretraga` - Pretraga po nazivu
+- `kategorija_id` - Filter po kategoriji
+- `aktivan` - Filter po aktivnosti (true/false)
+- `sort_by` - Sortiranje (naziv, ocena, cena_dostave)
+- `sort_order` - Redosled (asc/desc)
+- `per_page` - Broj stavki po stranici
+
+#### Detalji restorana
+```http
+GET /api/restorani/{id}
+```
+
+### Jela
+
+#### Lista jela
+```http
+GET /api/jela?restoran_id=1&dostupno=true
+```
+
+### Porudžbine
+
+#### Kreiranje porudžbine
+```http
+POST /api/porudzbine
+Authorization: Bearer {token}
+Content-Type: application/json
+
+{
+  "restoran_id": 1,
+  "ime_kupca": "Marko Marković",
+  "email_kupca": "marko@example.com",
+  "telefon_kupca": "0641234567",
+  "adresa_dostave": "Knez Mihailova 10, Beograd",
+  "napomena": "Bez luka",
+  "jela": [
+    {
+      "id": 1,
+      "kolicina": 2
+    },
+    {
+      "id": 2,
+      "kolicina": 1
+    }
+  ]
+}
+```
+
+#### Moje porudžbine
+```http
+GET /api/porudzbine
+Authorization: Bearer {token}
+```
+
+### Vremenska Prognoza
+
+#### Vreme za Beograd
+```http
+GET /api/vreme/beograd
+```
+
+#### Vreme za proizvoljni grad
+```http
+GET /api/vreme?grad=Novi Sad
+```
+
+### Eksport (AdminOnly)
+
+#### Eksport porudžbina
+```http
+GET /api/eksport/porudzbine
+Authorization: Bearer {admin-token}
+```
+
+#### Eksport restorana
+```http
+GET /api/eksport/restorani
+Authorization: Bearer {admin-token}
+```
+
+## 👥 Korisničke Uloge
+
+### Administrator
+- Email: `admin@dostava.rs`
+- Password: `password123`
+- Prava: Puno upravljanje svim resursima
+
+### Obični Korisnik
+- Email: `marko@example.com`
+- Password: `password123`
+- Prava: Pregled i kreiranje porudžbina
+
+## 🧪 Testiranje
+
+Koristi Postman za testiranje API endpointa:
+
+1. Registruj se ili prijavi
+2. Skopiraj token iz odgovora
+3. Dodaj `Authorization: Bearer {token}` u header za protected rute
+4. Testira endpointe
+
+## 📝 Git Verzionisanje
+
+Projekat prati best practices sa smislenim komitovima:
+- Backend: 13+ komitova
+- Frontend: 16+ komitova
+- Ukupno: 30+ komitova
+
+Svi članovi tima su kolaboratori sa komitovima.
+
+## 👨‍💻 Autori
+
+- **Student 1**: 2020_0010
+- **Student 2**: 2020_0177
+
+**Projekat**: Internet Tehnologije 2024
+**Repozitorijum**: [GitHub](https://github.com/elab-development/internet-tehnologije-2024-projekat-apkporucivanjehrane_2020_0010_2020_0177)
+
+## 📄 Licenca
+
+Ovaj projekat je kreiran za obrazovne svrhe.

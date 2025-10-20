@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\RestoranController;
 use App\Http\Controllers\Api\JeloController;
 use App\Http\Controllers\Api\PorudzbinaController;
 use App\Http\Controllers\Api\VremeController;
+use App\Http\Controllers\Api\EksportController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -52,4 +53,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/porudzbine', [PorudzbinaController::class, 'store']);
     Route::get('/porudzbine/{porudzbina}', [PorudzbinaController::class, 'show']);
     Route::patch('/porudzbine/{porudzbina}/status', [PorudzbinaController::class, 'updateStatus']);
+
+    // Eksport rute (samo za admin)
+    Route::middleware('admin')->group(function () {
+        Route::get('/eksport/porudzbine', [EksportController::class, 'eksportPorudzbina']);
+        Route::get('/eksport/restorani', [EksportController::class, 'eksportRestorana']);
+    });
 });
